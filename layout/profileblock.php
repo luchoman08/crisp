@@ -33,6 +33,7 @@ function get_content () {
     $wwwroot = '';
     $signup = '';
 }
+
 if (empty($CFG->loginhttps)) {
     $wwwroot = $CFG->wwwroot;
 } else {
@@ -45,5 +46,19 @@ if (!isloggedin() or isguestuser()) {
     echo '<button style="color: white;" class="btn" type="submit"> '.get_string('login').'</button>';
     echo '</form>';
 } else {
-    echo $OUTPUT->user_menu();
+    echo '<ul class="nav">
+		<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#cm_submenu_5">
+    <img class="profilepic" src="'.$CFG->wwwroot.'/user/pix.php?file=/'.$USER->id.'/f1.jpg"
+    width="30px" height="30px" title="'.$USER->firstname.' '.$USER->lastname.'"
+    alt="'.$USER->firstname.' '.$USER->lastname.'"/>'.$USER->firstname;
+    echo '<b class="caret"></b></a>
+    <ul class = "dropdown-menu profiledrop">
+    <li><a href = "'.$CFG->wwwroot.'/my">'.get_string('mycourses').'</a></li>
+    <li><a href = "'.$CFG->wwwroot.'/user/files.php">'.get_string('myfiles').'</a></li>
+    <li><a href = "'.$CFG->wwwroot.'/calendar/view.php?view=month">'.get_string('calendar', 'calendar').'</a></li>
+    <li><a href = "'.$CFG->wwwroot.'/user/profile.php">'.get_string('viewprofile').'</a></li>
+    <li><a href = "'.$CFG->wwwroot.'/user/edit.php">'.get_string('editmyprofile').'</a></li>
+    <li><a href = "'.$CFG->wwwroot.'/user/preferences.php">'.get_string('preferences').'</a></li>
+    <li><a href = "'.$CFG->wwwroot.'/login/logout.php">'.get_string('logout').'</a></li></ul></li></ul>';
 }

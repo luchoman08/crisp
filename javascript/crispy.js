@@ -26,10 +26,22 @@ $(document).ready(function() {
        $(this).find('ul').css('display','none');
       } else {
        $(this).addClass('shown');
-       $(this).css('background','#088a4a');
+       $(this).css('background','#D51B23');
        $(this).find('ul').css('display','block');
       }
     });
   });
-  
+
+  $('#main-navigation2 li').each(function(){
+    $(this).hover(function(e){
+      e.preventDefault();
+      if($(this).hasClass('shown')) {
+       $(this).removeClass('shown');
+       $(this).find('ul').css('display','none');
+      } else {
+       $(this).addClass('shown');
+       $(this).find('ul').css('display','block');
+      }
+    });
+  });
 });

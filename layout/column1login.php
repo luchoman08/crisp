@@ -28,22 +28,62 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$html = theme_crisp_get_html_for_settings($OUTPUT, $PAGE);?>
-<?php require('header.php');
+global $CFG, $USER;
+$html = theme_crisp_get_html_for_settings($OUTPUT, $PAGE);
+echo $OUTPUT->doctype()
 ?>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
+<head>
+  <title><?php echo $OUTPUT->page_title(); ?></title>
+  <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+  <?php echo $OUTPUT->standard_head_html() ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body <?php echo $OUTPUT->body_attributes(); ?>>
+
+<?php echo $OUTPUT->standard_top_of_body_html(); ?>
+<header id="header-login"role="banner" class="navbar <?php echo $html->navbarclass ?> moodle-has-zindex">
+
+  <nav>
+
+       <div class="row-fluid">
+           <div class="span12">
+              <a href="https://campusvirtual.univalle.edu.co/moodle"><img class="center-in-span"src="<?php echo $CFG->wwwroot. '/theme/crisp/img/Encabezado_IngresoCampus.png';?>"/></a>
+           </div>
+        </div>
+  </nav>
+
+</header>
+
+
+
+
 <div id="page" class="container-fluid">
   <div id="page-content" class="row-fluid">
-    <section id="region-main" class="span12">
-      <div class="row-fluid">
-        <?php echo '<div class="mainlogin">'; ?>
-          <div class="span12"> 
-            <?php echo $OUTPUT->main_content();?>
-          </div> 
-          <?php echo '</div>';
-          echo $OUTPUT->course_content_footer();
-        ?>
-      </div> 
-    </section>
+
+      <div class="container">
+        <div id="content-login" class="container">
+          <div class="row">
+            <div id="msj-login" class="span6">
+              <p>Si desea más informaci&oacuten ó  requiere
+                asesoría adicional, por favor escríbanos a
+                campusvirtual@correounivalle.edu.co ó comuniquese al 3182649 ó 3182653</p>
+<a href="https://campusvirtual.univalle.edu.co/moodle/info-dintev/CVUV_usuarios_2015.swf">
+<center> <h6><b>Manual de ingreso al Campus Virtual</b></a></h6></p></center>      
+ </div>
+            <div class="span6">
+              <center><h5>Ingreso al Campus Virtual Univalle</h5></center>
+              <?php echo $OUTPUT->main_content();?>
+              <div class="forgetpass2"><a href="forgot_password.php">¿Olvidó su contraseña?</a></div>
+            </div>
+            <?php echo $OUTPUT->course_content_footer(); ?>
+          </div>
+        </div>
+
+      </div>
+
   </div>
 </div>
+
 <?php require('footer.php');
+

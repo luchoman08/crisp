@@ -29,16 +29,43 @@
  */
 ?>
 <footer id="page-footer">
-	<div class="footermain">
-		<div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-    <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-    <?php
-    echo $html->footnote;
-    echo $OUTPUT->login_info();
-    echo $OUTPUT->home_link();
-    echo $OUTPUT->standard_footer_html();
-    ?>
-	</div>   <!-- end of footermain div --> 
+	<div class="home-footer-contacto">
+            <div class="container">
+                <div class="footer-logo">
+                    <a href="http://www.univalle.edu.co" title="Universidad del Valle" target="_blank">
+                            <img class="logo-img" src="<?php echo $CFG->wwwroot. '/theme/crisp/pix/logo-footer.png';?>" alt="Universidad del Valle" height="159" width="112">
+                    </a>
+                </div>
+                <div class="nombre-contacto">
+                    <h5>Universidad del Valle</h5>
+                    <ul>
+                        <li>Cali - Colombia</li>
+                    </ul>
+                </div>
+                <div class="address">
+                    <h5> </h5>
+                    <ul>
+                        <li>Dirección De Nuevas Tecnologías y Educación Virtual-Dintev</li>
+                        <li><a target="_blank" href="mailto:campusvirtual@correounivalle.edu.co">campusvirtual@correounivalle.edu.co</a></li>
+                        <li>Telefonos: +57 2 318 2649 ó 321 2100 Ext. 2649</li>
+                        <li>Edificio 317-CREE Ciudadela Universitaria Meléndez</li>
+                        <li>Universidad Del Valle</li>
+                        <li>Cali-Colombia</li>
+                    </ul>
+                </div>
+    
+                   
+                <div class="social">
+                   <h5></h5>
+                    <h5>Redes Sociales:</h5>
+                    <ul>
+                        <li><a href="https://plus.google.com/109211824054192939485/posts" target="_blank"><img src="<?php echo $CFG->wwwroot. '/theme/crisp/pix/google+.png';?>"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCp-GXCjh44n7meVqt40Th4w" target="_blank"><img src="<?php echo $CFG->wwwroot. '/theme/crisp/pix/youtube.png';?>"></a></li>
+                        <li><a href="https://twitter.com/DintevUnivalle" target="_blank"><img src="<?php echo $CFG->wwwroot. '/theme/crisp/pix/twitter.png';?>"></a></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
 </footer>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>

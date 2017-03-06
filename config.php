@@ -70,12 +70,6 @@ $THEME->layouts = array(
       'defaultregion' => 'side-pre',
       'options' => array('nonavbar' => true),
   ),
-  'course' => array(
-      'file' => 'columns2.php',
-      'regions' => array('side-pre'),
-      'defaultregion' => 'side-pre',
-      'options' => array('nonavbar' => true),
-  ),
   'blog' => array(
       'file' => 'masonryblogpage.php',
       'regions' => array('side-pre'),
